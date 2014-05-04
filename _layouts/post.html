@@ -18,7 +18,7 @@ layout: default
   </span>
   {% endif %}
   <span class="tags">
-    <a href="{{ page.url }}#disqus_thread" onclick="if(document.getElementById('leave_comment_link').style.display != 'none') {leave_comment();}"></a>
+    <a href="{{ page.url }}#disqus_thread" data-disqus-identifier="{{ page.guid }}" onclick="if(document.getElementById('leave_comment_link').style.display != 'none') {leave_comment();}"></a>
   </span>
   </section>
   <section class="post">
@@ -60,7 +60,6 @@ layout: default
           $("#collapse_comment_link").css("display", "");
       };
       function collapse_comment() {
-          // document.getElementById("disqus_thread").innerHTML = '';
           $("#disqus_thread").slideUp(400, function() {
               $("#disqus_thread").empty();
               $("#leave_comment_link").css("display", "");
@@ -68,17 +67,17 @@ layout: default
               $("#disqus_thread").css("display", "");
           });
       };
+      (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
       (function () {
        var s = document.createElement('script'); s.async = true;
        s.type = 'text/javascript';
        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(s);
       }());
-      (function() {
-       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-       dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      })();
   </script>
   <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   </section>
