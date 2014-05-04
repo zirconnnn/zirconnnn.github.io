@@ -1,0 +1,28 @@
+---
+title: 'for Test'
+layout: post
+guid: urn:uuid:783e233b-e9ae-4ea3-ae8b-ef2d7ba916f9
+category: tools
+tags:
+  - github
+  - jekyll
+  - blog
+  - disqus
+  - fortest
+---
+
+just create a blog with github pages.
+
+this is for test.
+
+{% highlight ruby linenos %}
+def show
+  @widget = Widget(params[:id])
+    respond_to do |format|
+        format.html # show.html.erb
+            format.json { render json: @widget }
+              end
+              end
+{% endhighlight %}
+
+

@@ -1,0 +1,23 @@
+markdown: rdiscount
+pygments: true
+permalink: /:month-:day-:year/:title.html
+name: "infinite."
+
+author: "ZircoN"
+atom-baseurl: "http://zircon.me"
+disqus: "zircon"
+
+navigations:
+  - title: Categories
+    class: fa fa-bars
+    href: /categories.html
+  - title: Tags
+    class: fa fa-tags
+    href: /tags.html
+  - title: About
+    class: fa fa-user
+    href: /about.html
+  - title: Subscribe
+    class: fa fa-rss
+    href: /atom.xml
+
