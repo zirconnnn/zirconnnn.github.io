@@ -1,5 +1,5 @@
 title:            infinite.
-description:      no time
+description:      Blog Geek Programmer Digital Photography
 disqus_shortname: zircon
 #reading_time:     true
 words_per_minute: 200
@@ -18,17 +18,18 @@ owner:
   github:         zirconnnn
   stackexchange:  
   linkedin:       
-  instagram:      
+  instagram:      zirconnnn
   flickr:         
   tumblr:         
   # For Google Authorship https://plus.google.com/authorship
   google_plus:   
+  weibo:         
 
 # Background image to be tiled on all pages
-background: 
+background: witewall_3.png
 
 # Analytics and webmaster tools stuff goes here
-google_analytics:   
+google_analytics:   UA-53493046-1
 google_verify:      
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
 bing_verify:         
