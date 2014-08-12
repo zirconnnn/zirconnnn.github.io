@@ -1,7 +1,6 @@
 source 'http://ruby.taobao.org/'
 
-gem 'jekyll'
-gem 'kramdown'
+gem 'github-pages'
 gem 'coderay'
 gem 'rake'
 gem 'thor'
