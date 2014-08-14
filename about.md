@@ -2,7 +2,7 @@
 layout: page
 permalink: /about/
 title: About Me
-tags: [Jekyll, theme, modern, minimal, responsive]
+tags: [Geek, Programmer, Life, Photography]
 image:
   feature: abstract-5.jpg
   credit: dargadgetz
@@ -10,12 +10,13 @@ image:
 share: true
 ---
 
-{% highlight %}
+{% highlight sh %}
 
-ZircoN@World$ man life
-No manual entry for life
+**ZircoN@World$ man life**
 
-神经质，黑白灰，同步控，爱摄影，爱华语
+**No manual entry for life**
+
+*神经质，黑白灰，同步控，爱摄影，爱华语*
 
 {% endhighlight %}
 
