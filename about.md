@@ -10,13 +10,14 @@ image:
 share: true
 ---
 
+
+> *神经质，黑白灰，同步控，摄影渣，爱华语*
+
 {% highlight sh %}
 
-**ZircoN@World$ man life**
+ZircoN@World$ man life
 
-**No manual entry for life**
-
-*神经质，黑白灰，同步控，爱摄影，爱华语*
+No manual entry for life
 
 {% endhighlight %}
 
