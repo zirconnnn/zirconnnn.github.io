@@ -10,5 +10,12 @@ image:
 share: true
 ---
 
+{% highlight %}
 
-> 神经质，黑白灰，同步控，爱摄影，爱华语
+ZircoN@World$ man life
+No manual entry for life
+
+神经质，黑白灰，同步控，爱摄影，爱华语
+
+{% endhighlight %}
+
