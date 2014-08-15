@@ -22,7 +22,7 @@ share: true
 ## 2. GitHub Pages
 不熟悉git和github？可以戳这篇[史上最浅显易懂的Git教程][5]。
 
-要在[GitHub Pages][2]搭建blog需要选择**User or organization site**，需要注意你的blog仓库名必须和你的**github username**相同，然后follow页面上剩余的步骤就算基本搭建完成，浏览器中输入`username.github.io`就可以看到效果。
+要在[GitHub Pages][2]搭建blog最好选择**User or organization site**，需要注意你的blog仓库名必须和你的**github username**相同，然后follow页面上剩余的步骤就算基本搭建完成，浏览器中输入`username.github.io`就可以看到效果。
 
 ### 绑定域名
 下面是绑定域名到刚才搭建的pages，官方指导在[这里][6]。
@@ -63,7 +63,7 @@ gem install bundler
 
 > gem 'coderay'
 
-而[the GitHub Pages Gem][11]这个项目将所有GitHub Pages所依赖的RubyGems整合成一个gem：`github-pages`，所以你只要在Gemfile中加上`gem 'github-pages'`，就可以让你的本地环境保持和GitHub Pages[环境][20]一致，如果Jekyll等版本有更新，只需要简单的跑一下`bundle update github-pages`即可。
+而[the GitHub Pages Gem][11]这个项目将所有GitHub Pages所依赖的RubyGems包括插件整合成一个gem：`github-pages`，所以你只要在Gemfile中加上`gem 'github-pages'`，就可以让你的本地环境保持和GitHub Pages[环境][20]一致，如果Jekyll等版本有更新，只需要简单的跑一下`bundle update github-pages`即可。
 
 ### 熟悉Jekyll
 熟悉Jekyll最好就是clone一个用Jekyll搭建的站点到本地，[这儿][12]有很多，接着对照Jekyll的[官方文档][13]进行学习，列一下几个比较重要的点：
@@ -72,6 +72,7 @@ gem install bundler
 - _config.yml，整个project的Jekyll配置文件
 - [YAML][14]头信息，Jekyll会特别处理带有这种头信息的文件
 - [liquid][15]模板语言，Jekyll对其进行了一些扩展，如使用[Pygments][18]语法高亮的tags写法：{% raw %}`{% highlight java %}{% endhighlight %}`{% endraw %}
+- 插件，由于GitHub Pages生成sites时使用了`--safe`选项，所以自定义的插件无法支持，但是默认支持[这些插件][32]，`github-pages`已包含这些插件
 
 ### Markdown
 Jekyll支持使用Markdown撰写blog，Markdown语法相当简单，若不熟悉，[这儿][16]有快速入门，Jekyll 2.0之后使用[Kramdown][17]作为默认的Markdown解析器，其他还有像[Discount][19]等，这些解析器都对标准Markdown有一些扩展与改进。Mac下较好的Markdown编辑器推荐[mou][23]，另外这个[在线的编辑器][24]感觉也不错。
@@ -93,7 +94,7 @@ Jekyll的theme有很多选择，比如[这里][26]还有[这里][27]，你可以
 - 同时托管到[gitcafe][31]
 - 加个toc
 - Jekyll 2.0新特性
-- 保持热情写blog吧
+- 保持热情写blog吧 :sunny:
 
 [1]: http://www.godaddy.com/
 [2]: https://pages.github.com/
@@ -126,3 +127,4 @@ Jekyll的theme有很多选择，比如[这里][26]还有[这里][27]，你可以
 [29]: http://hexo.io/
 [30]: http://ruhoh.com/
 [31]: https://gitcafe.com/
+[32]: https://help.github.com/articles/using-jekyll-plugins-with-github-pages
