@@ -33,6 +33,7 @@ google_analytics:   UA-53493046-1
 google_verify:      
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
 bing_verify:         
+baidu_stat:         true
 
 # Links to include in top navigation
 # For external links add external: true
