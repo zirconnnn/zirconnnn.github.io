@@ -10,8 +10,6 @@ image:
 comments: true
 share: true
 ---
-
-
 博客搭了好久了，前几天重新换了个响应式布局的主题，还挺清爽简洁的，顺便记录下搭建过程吧。
 
 ## 1. 域名
@@ -72,7 +70,7 @@ gem install bundler
 - _config.yml，整个project的Jekyll配置文件
 - [YAML][14]头信息，Jekyll会特别处理带有这种头信息的文件
 - [liquid][15]模板语言，Jekyll对其进行了一些扩展，如使用[Pygments][18]语法高亮的tags写法：{% raw %}`{% highlight java %}{% endhighlight %}`{% endraw %}
-- 插件，由于GitHub Pages生成sites时使用了`--safe`选项，所以自定义的插件无法支持，但是默认支持[这些插件][32]，`github-pages`已包含这些插件
+- 插件，由于GitHub Pages生成sites时使用了`--safe`选项，所以自定义的插件无法支持，但是默认支持[这些插件][32]，`github-pages` gem已安装这些插件
 
 ### Markdown
 Jekyll支持使用Markdown撰写blog，Markdown语法相当简单，若不熟悉，[这儿][16]有快速入门，Jekyll 2.0之后使用[Kramdown][17]作为默认的Markdown解析器，其他还有像[Discount][19]等，这些解析器都对标准Markdown有一些扩展与改进。Mac下较好的Markdown编辑器推荐[mou][23]，另外这个[在线的编辑器][24]感觉也不错。
