@@ -57,8 +57,8 @@ permalink:   /:month-:day-:year/:title.html
 # Amount of post to show on home page
 paginate: 5
 
-redcarpet:
-    extensions: ["fenced_code_blocks"]
+#redcarpet:
+#    extensions: ["fenced_code_blocks"]
 
 kramdown:
   auto_ids: true
