@@ -24,7 +24,7 @@ Gradle构建工具是任务驱动型的构建工具，并且可以通过各种Pl
 
 ### Project级别的build.gradle文件
 
-{% highlight groovy %}{% highlight groovy %}
+```groovy
 buildscript {
  
 //编译Gradle脚本过程中需要的依赖关系//
@@ -55,12 +55,12 @@ allprojects {
 }
  
 //应用依赖jCenter repository.//
-{% endhighlight %}
+```
 
 
 ### Module级别的build.gradle文件
 
-{% highlight groovy %}
+```groovy
 apply plugin: 'com.android.application'
  
 //引入Android App插件.//
@@ -126,7 +126,7 @@ dependencies {
 //依赖编译远端库.//
  
 }
-{% endhighlight %}
+```
 
 ### Other Gradle Files
 
@@ -134,7 +134,7 @@ dependencies {
 
 wrapper相关配置文件：当其他人编译你的项目时，即使他们没有安装gradle，使用`./gradlew`相关命令时，这个文件会检查正确版本的gradle是否被安装，如有必要会帮你下载正确的版本。下面会详细讲wrapper。
 
-{% highlight groovy %}
+```groovy
 distributionBase=GRADLE_USER_HOME
  
 //决定解压后的Gradle包是存储到工程目录下, 还是存储到Gradle user home directory. 
@@ -154,15 +154,15 @@ zipStorePath=wrapper/dists
 distributionUrl=https\://services.gradle.org/distributions/gradle-2.2.1-all.zip
  
 //Gradle的下载地址.//
-{% endhighlight %}
+```
 
 #### settings.gradle
 
 该文件组合你所有想构建的module。
 
-{% highlight groovy %}
+```groovy
 include ':app', ':ActionBar-PullToRefresh'
-{% endhighlight %}
+```
 
 #### gradle.properties (Project Properties)
 
@@ -172,9 +172,9 @@ include ':app', ':ActionBar-PullToRefresh'
 
 这个文件告诉Android Gradle plugin你的Android SDK安装在哪：
 
-{% highlight groovy %}
+```groovy
 sdk.dir=/Users/jessica/Library/Android/sdk
-{% endhighlight %}
+```
 
 由于这是你本地的SDK路径，所以这个文件不应该加入版本控制中。
 
@@ -186,29 +186,29 @@ Android Studio新建项目时都建议使用Gradle Wrapper来构建，这不是�
 
 如果你想将Gradle项目转换成基于Gradle Wrapper的，只需要简单的跑一下`gradle wrapper`即可，也可以加上`--gradle-version 2.4`选项来指定一个gradle的版本，`--gradle-distribution-url`选项指定了从哪儿下载gradle，如果没有任何选项，则会从Gradle repository下载你运行`wrapper`task的gradle版本。你也可以将`wrapper`这个task写入你的`build.gradle`文件：
 
-{% endhighlight %}
+```groovy
 task wrapper(type: Wrapper) {
     gradleVersion = '2.4'
 }
-{% endhighlight %}
+```
 
 `wrapper`task会在你的项目根目录下生成如下文件：
 
-{% highlight groovy %}
+```groovy
 sample/
   gradlew
   gradlew.bat
   gradle/wrapper/
     gradle-wrapper.jar
     gradle-wrapper.properties
-{% endhighlight %}
+```
 这些文件是都应该加入到版本控制中的。
 
 如果你想更改Gradle版本，可以直接修改`gradle-wrapper.properties`文件：
 
-{% highlight groovy %}
+```groovy
 distributionUrl=https\://services.gradle.org/distributions/gradle-2.4-all.zip
-{% endhighlight %}
+```
 或者再跑一下`wrapper`task重新生成这些文件，因为`wrapper`脚本可能会有更新。
 
 使用wrapper的话会忽略你本机已经安装的gradle。
@@ -217,7 +217,7 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-2.4-all.zip
 
 Build variants是product flavors和build types的组合。
 
-{% highlight groovy %}
+```groovy
 buildTypes {
     debug {
         debuggable true
@@ -237,7 +237,7 @@ productFlavors {
         versionName "1.0-full"
     }
 }
-{% endhighlight %}
+```
 上面的片段会组合成4种variants：`demoDebug`，`demoRelease`，`fullDebug`，`fullRelease`。
 
 Android Studio正常左下角有一个Build Variants的面板，里面可以选择你最终想编译的版本，当选择run一个模块时，就是编译的这里选择的版本。也可以通过命令行`./gradlew assemble<flavor><buildtype>`来编译，编译出的apk可以在`app/build/outputs/apk`里找到，格式是`app-<flavor>-<buildtype>.apk`。
@@ -253,7 +253,7 @@ Android Studio正常左下角有一个Build Variants的面板，里面可以选�
 当然我们也可以通过脚本中的sourceSets{ }配置目录结构。
 特别对于非约定目录结构的工程（比如Eclipse工程），通过sourceSets{ }加以配置以便Gradle识别：
 
-{% highlight groovy %}
+```groovy
 sourceSets {
         main {
             manifest.srcFile 'AndroidManifest.xml'
@@ -268,7 +268,7 @@ sourceSets {
         }
         instrumentTest.setRoot('tests')
 }
-{% endhighlight %}
+```
 
 ## 关于dependencies
 
@@ -300,11 +300,11 @@ Gradle会自动从repositories{...}帮你下载编译Remote Dependencies。
 
 并不是所有类库都host在jcenter或者Maven Central上，有些是host在自己的Maven仓库中，比如我们项目中所使用的twitter的crashlytics库，它host在twitter自己的仓库中：
 
-{% highlight groovy %}
+```groovy
 repositories {
     maven { url 'https://maven.fabric.io/public' }
 }
-{% endhighlight %}
+```
 关于如何将自己的类库上传到jcenter可以参考[这篇文章](http://inthecheesefactory.com/blog/how-to-upload-library-to-jcenter-maven-central-as-dependency/en)。
 
 ## Gradle的一些概念
@@ -315,27 +315,27 @@ Gradle脚本基于Groovy。每一个Gradle脚本执行时都会配置一种类�
 
 脚本里可以使用任何Groovy/Java的语法。比如解析AndroidManifest文件取得VersionName：
 
-{% highlight groovy %}
+```groovy
 def manifestVersionName() {
     def manifestFile = file(project.projectDir.absolutePath + '/src/main/AndroidManifest.xml')
     def ns = new groovy.xml.Namespace("http://schemas.android.com/apk/res/android", "android")
     def xml = new XmlParser().parse(manifestFile)
     return xml.attributes()[ns.versionName].toString()
 }
-{% endhighlight %}
+```
 
 ### Task
 
 Gradle是基于Task的，每一个Task代表了一连串原子性的操作。在Android Studio右边的Gradle面板或者输入命令`./gradlew tasks`都能查看当前project所有的Task。
 我们也可以在脚本中新建一个task：
 
-{% highlight groovy %}
+```groovy
 task myTask
 task myTask { configure closure }
 task myType << { task action }
 task myTask(type: SomeType)
 task myTask(type: SomeType) { configure closure }
-{% endhighlight %}
+```
 
 ### Plugin
 
