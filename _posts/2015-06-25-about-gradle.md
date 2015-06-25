@@ -24,10 +24,10 @@ Gradle构建工具是任务驱动型的构建工具，并且可以通过各种Pl
 
 ### Project级别的build.gradle文件
 
-```groovy
+{% highlight groovy %}
 buildscript {
  
-//编译Gradle脚本过程中需要的依赖关系//
+//编译Gradle脚本过程中需要的依赖关系.//
  
     repositories {
  
@@ -38,7 +38,7 @@ buildscript {
  
     dependencies {
  
-   classpath 'com.android.tools.build:gradle:1.2.3'
+        classpath 'com.android.tools.build:gradle:1.2.3'
  
 //脚本依赖Android plugin for Gradle 1.2.3// 
  
@@ -47,7 +47,7 @@ buildscript {
  
 allprojects {
  
-//你应用的依赖关系//
+//你应用的依赖关系.//
  
     repositories {
         jcenter()
@@ -55,7 +55,7 @@ allprojects {
 }
  
 //应用依赖jCenter repository.//
-```
+{% endhighlight %}
 
 
 ### Module级别的build.gradle文件
