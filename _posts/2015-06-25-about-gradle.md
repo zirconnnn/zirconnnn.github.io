@@ -276,15 +276,21 @@ dependencies一般有三种形式：
 
 - Module Dependencies
 
-> compile project(":lib")
+{% highlight groovy %}
+compile project(":lib")
+{% endhighlight %}
 
 - Local Dependencies
 
-> compile fileTree(dir: 'libs', include: ['*.jar'])
+{% highlight groovy %}
+compile fileTree(dir: 'libs', include: ['*.jar'])
+{% endhighlight %}
 
 - Remote Dependencies
 
-> compile 'com.android.support:appcompat-v7:19.0.1'
+{% highlight groovy %}
+compile 'com.android.support:appcompat-v7:19.0.1'
+{% endhighlight %}
 
 对于Remote Dependencies，书写的格式一般是`group:name:version`，[这个网址](http://gradleplease.appspot.com/)可以帮你在[Maven Central](http://search.maven.org/)搜索lib并生成dependencies。
 
