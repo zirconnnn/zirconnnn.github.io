@@ -330,10 +330,14 @@ def manifestVersionName() {
 }
 {% endhighlight %}
 
+### Project
+
+Gradle里面的Project的概念可以理解成Android Studio中的Module的概念，Project是指我们的构建产物（比如Jar包）或实施产物（将应用程序部署到生产环境）。一个项目可以包含一个或多个任务。
+
 ### Task
 
-Gradle是基于Task的，每一个Task代表了一连串原子性的操作。在Android Studio右边的Gradle面板或者输入命令`./gradlew tasks`都能查看当前project所有的Task。
-我们也可以在脚本中新建一个task：
+Project由一个或多个Task组成，每一个Task代表了一连串原子性的操作。在Android Studio右边的Gradle面板或者输入命令`./gradlew tasks`都能查看当前项目所有的Task。
+我们也可以用多种方式来新建一个task：
 
 {% highlight groovy %}
 task myTask
@@ -345,7 +349,7 @@ task myTask(type: SomeType) { configure closure }
 
 ### Plugin
 
-添加Plugin到Gradle中其实就是添加了一些新的task，域对象(如SourceSet)，约定(如Java source默认放在src/main/java下)，同时也会扩展一些已经存在的类型。
+在Gradle中，所有有用的特性都是由Plugin来提供的。添加Plugin到Gradle中其实就是添加了一些新的task，域对象(如SourceSet)，约定(如Java source默认放在src/main/java下)，同时也会扩展一些已经存在的类型。
 Plugin分两种：脚本插件`apply from: 'other.gradle'`和二进制插件`apply plugin: 'java'`。
 
 ## Refs
