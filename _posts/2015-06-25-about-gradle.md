@@ -9,6 +9,7 @@ image:
   creditlink: 
 comments: true
 share: true
+permalink: /2015/:title/
 ---
 ## 简介
 
