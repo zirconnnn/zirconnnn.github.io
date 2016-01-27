@@ -2,14 +2,15 @@
 layout: post
 title: "Retrofit 2.0的一些用法"
 modified: 2016-01-25 17:00:32 +0800
-tags: [android,retrofit,2.0,network,library,square,volley]
+tags: [android,retrofit,2.0,network,library,square,volley,上传,upload,下载,download]
 image:
-  feature: abstract-3.jpg
+  feature: abstract-6.jpg
   credit:
   creditlink:
 comments: true
 share: true
 ---
+### 前言
 最近在项目中使用了Square家的[Retrofit](http://square.github.io/retrofit/)网络库，主要是为了配合[RxJava](https://github.com/ReactiveX/RxJava)，使用下来感觉还不错，这里稍微记录下。
 
 我使用时最新版本是`compile 'com.squareup.retrofit2:retrofit:2.0.0-beta2'`，按照`Jake Wharton`的说法虽然还是beta版但是接口已经相对稳定了，所以我们可以在项目中依赖它。由于我并没有在项目中使用过1.x版本，所以不会过多的与1.x版本比较。至于与其他网络库的对比，可自行Google，还是有很多文章的，比如stackoverflow上的[这篇](http://stackoverflow.com/questions/16902716/comparison-of-android-networking-libraries-okhttp-retrofit-volley#)。
@@ -130,12 +131,14 @@ params.put("AttachmentKey\"; filename=\"" + image.getFileName(), requestBody);
 
 上面的代码对应于Http RequesBody内容如下：
 
-> --88fc3b38-77d8-4ec3-b057-35600d14f0b3
-> Content-Disposition: form-data; name="AttachmentKey"; filename="example.jpg"
-> Content-Transfer-Encoding: binary
-> Content-Type: image/jpeg
-> Content-Length: 169913
-> ...
+```
+--88fc3b38-77d8-4ec3-b057-35600d14f0b3
+Content-Disposition: form-data; name="AttachmentKey"; filename="example.jpg"
+Content-Transfer-Encoding: binary
+Content-Type: image/jpeg
+Content-Length: 169913
+...
+```
 
 ### 其他
 - 如果你想在Http Headers里加入公用的Header，可以如下做：
