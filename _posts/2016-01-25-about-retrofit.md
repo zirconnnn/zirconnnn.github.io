@@ -156,7 +156,11 @@ RequestInterceptor requestInterceptor = new RequestInterceptor();
 okHttpClient.interceptors().add(requestInterceptor);
 {% endhighlight %}
 
+- 取消正在进行的网络请求
 
+对于返回类型是`Call`的请求，调用`Call.cancel()`即可。
+
+对于返回类型是`Observable`的请求，调用你`Subscriber`的`unsubscribe()`即可，它最终还是会去调用`Call.cancel()`方法。
 
 
 
