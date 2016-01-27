@@ -131,7 +131,7 @@ params.put("AttachmentKey\"; filename=\"" + image.getFileName(), requestBody);
 
 上面的代码对应于Http RequesBody内容如下：
 
-{% highlight text %}
+{% highlight java %}
 --88fc3b38-77d8-4ec3-b057-35600d14f0b3
 Content-Disposition: form-data; name="AttachmentKey"; filename="example.jpg"
 Content-Transfer-Encoding: binary
