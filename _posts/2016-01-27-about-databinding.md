@@ -37,6 +37,7 @@ gradle插件会帮你下载DataBinding相关的依赖包，1.5版本的gradle插
 
 ## 一些用法
 ### Layout相关
+
 - 除了`java.lang.*`包下的类，其他的类要么使用全名，要么需要`import`：
 
 {% highlight xml %}
