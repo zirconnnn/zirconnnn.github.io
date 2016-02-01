@@ -36,6 +36,7 @@ android {
 gradle插件会帮你下载DataBinding相关的依赖包，1.5版本的gradle插件默认集成的是`1.0-rc5`版本的DataBinding，`version`选项经实验最好不加，使用当前Gradle插件默认的DataBinding版本即可，否则会有些莫名奇妙的编译问题，比如我遇到[这个问题](https://code.google.com/p/android/issues/detail?id=195178&q=databinding%20StringIndexOutOfBoundsException&colspec=ID%20Status%20Priority%20Owner%20Summary%20Stars%20Reporter%20Opened)。可以从[jcenter](https://bintray.com/android/android-tools/com.android.databinding.compilerCommon/view)上查看到DataBinding的最新版本。
 
 ## 一些用法
+
 ### Layout相关
 
 - 除了`java.lang.*`包下的类，其他的类要么使用全名，要么需要`import`：
